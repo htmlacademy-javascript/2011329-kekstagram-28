@@ -1,10 +1,13 @@
-function testLine ('проверяемая строка', 20) {
-  if ('проверяемая строка' <= 20) {
+function testLine (testingLine, linghtNumber) {
+  if (testingLine <= linghtNumber) {
     return true;
   }
 
   return false;
 }
+
+console.log(testLine('html', 4));
+
 
 function isPalindrome(str){
   str = str.toLowerCase().replace(/\s/g, "");
