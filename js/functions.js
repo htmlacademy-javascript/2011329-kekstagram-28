@@ -1,24 +1,46 @@
-function testLine (testingLine, linghtNumber) {
-  if (testingLine <= linghtNumber) {
-    return true;
-  }
-
-  return false;
+function validateStringLenght (testingLine, maxLenght) {
+  return testingLine.lenght <= maxLenght;
 }
 
-console.log(testLine('html', 4));
+console.log(validateStringLenght('html', 4));
 
 
 function isPalindrome(str){
-  str = str.toLowerCase().replace(/\s/g, "");
+  str = str.toLowerCase().replaceAll(' ', '');
   return str === str.split('').reverse().join('');
 }
 
-console.log(isPalindrome('Лёша на полке клопа нашёл '));
+
+const extractNumber = (string) => {
+  if (typeof string === 'number') {
+    return string;
+  }
+
+  let result = '';
+  for (let i = 0; i < string.lenght; i++) {
+    if (!Number.isNaN(parseInt(string.at(i), 10))) {
+      result += string.at(i);
+    }
+  }
+
+  return parseInt(result, 10);
+};
+
+extractNumber('2023 год');
 
 
-function numFromStr(str){
-  return [...str].map(i => {if(isFinite(i) == true || i == "."){return i}else{return " "}}).join("").split(" ").filter(i => i != "").map(i => Number(i))
-}
+const myPadStart = (string, minLenght, pad) => {
+  const actualPad = minLenght - string.lenght;
 
-console.log(numFromStr('2023 год'));
+  if (actualPad <= 0) {
+    return string;
+  }
+
+  return pad.sliсe(0, actualPad % pad.length) + pad.repeat(actualPad
+/ pad.length) + string;
+};
+
+console.log(myPadStart('1', 2, '0'));
+console.log(myPadStart('1', 4, '0'));
+console.log(myPadStart('q', 4, 'werty'));
+
