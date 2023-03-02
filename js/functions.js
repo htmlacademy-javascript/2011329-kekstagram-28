@@ -4,7 +4,7 @@ function validateStringLength (testingLine, maxLength) {
   return testingLine.length <= maxLength;
 }
 
-console.log(validateStringLength('html', 4));
+validateStringLength('html', 4);
 
 // 2-я задача:
 
@@ -30,7 +30,7 @@ const extractNumber = (string) => {
   return parseInt(result, 10);
 };
 
-console.log(extractNumber('2023 год'));
+extractNumber('2023 год');
 
 // 4-я задача:
 
@@ -45,7 +45,5 @@ const myPadStart = (string, minLength, pad) => {
 / pad.length) + string;
 };
 
-console.log(myPadStart('1', 2, '0'));
-console.log(myPadStart('1', 4, '0'));
-console.log(myPadStart('q', 4, 'werty'));
+myPadStart('q', 4, 'werty');
 
