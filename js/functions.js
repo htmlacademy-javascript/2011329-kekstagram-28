@@ -13,6 +13,8 @@ function isPalindrome(str){
   return str === str.split('').reverse().join('');
 }
 
+isPalindrome('Лёша на полке клопа нашёл ');
+
 // 3-я задача:
 
 const extractNumber = (string) => {
