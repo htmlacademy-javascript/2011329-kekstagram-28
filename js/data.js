@@ -26,7 +26,7 @@ function createRandomComment() {
 }
 
 function createPost() {
-  const numberOfComments = 7;
+  const numberOfComments = getRandomInteger(1, 7);
   return {
     id:  randomPostId(),
     url: createRandomUrl(),
