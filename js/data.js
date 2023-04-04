@@ -6,7 +6,7 @@ const randomPostId = createRandomIdFromRangeGenerator(1, 25);
 
 function createRandomUrl () {
   return `photos/${getRandomInteger(1, 25)}.jpg`;
-};
+}
 
 const createRandomeLike = createRandomIdFromRangeGenerator(15, 200);
 
@@ -14,7 +14,7 @@ const createRandomeIndexId = createRandomIdFromRangeGenerator(1, 1500);
 
 function createRandomAvatar () {
   return `img/avatar-${getRandomInteger(1, 6)}.svg`;
-};
+}
 
 function createRandomComment() {
   return {
@@ -34,8 +34,7 @@ function createPost() {
     likes: createRandomeLike(),
     comments: Array.from({length: numberOfComments}, createRandomComment),
   };
-};
+}
 
-const similarComments = Array.from({length: 25}, createPost);
+export {createPost};
 
-console.log(similarComments);
