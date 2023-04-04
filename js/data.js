@@ -36,9 +36,5 @@ function createPost() {
   };
 }
 
-const similarComments = Array.from({length: 25}, createPost);
-
-console.log(similarComments);
-
 export {createPost};
 

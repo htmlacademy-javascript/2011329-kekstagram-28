@@ -4,5 +4,7 @@ import './data.js';
 import {createPost} from './data.js';
 import {drawMiniatures} from './miniatures.js';
 
-drawMiniatures(createPost());
+const similarComments = Array.from({length: 25}, createPost);
+
+drawMiniatures(similarComments);
 
