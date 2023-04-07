@@ -3,7 +3,22 @@ const miniatureTemplate = document.querySelector('#picture').content;
 //Нашли нужный шаблон
 const container = document.querySelector('.pictures');
 
-const createMiniature = function ({comments, description, likes, url}) {
+/* const renderGallery = (pictures) => {
+  container.addEventListener('click', (evt) => {
+    const thumbnail = evt.target.closest('[data-thumbnail-id]');
+    if (!thumbnail) {
+      return;
+    }
+
+    const picture = pictures.find(
+      (item) => item.id === +thumbnail.dataset.miniatureId
+    );
+  });
+
+  drawMiniatures(pictures, container);
+}; */
+
+const createMiniature = function ({comments, description, likes, url, id}) {
   const miniature = miniatureTemplate.cloneNode(true);
 
   //Адрес изображения url подставьте как атрибут src изображения
@@ -13,6 +28,8 @@ const createMiniature = function ({comments, description, likes, url}) {
   miniature.querySelector('.picture__likes').textcontent = likes;
   //Количество комментариев comments выведите в блок .picture__comments
   miniature.querySelector('.picture__comments').textcontent = comments.length;
+  //Добавляем индификатор через dataset для дальнейшей связи по нему
+  // miniature.dataset.miniatureId = id;
 
   return miniature;
 };
