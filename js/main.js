@@ -3,8 +3,11 @@ import './util.js';
 import './data.js';
 import {createPost} from './data.js';
 import {drawMiniatures} from './miniatures.js';
+import {showBigPicture} from './popup.js';
 
-const similarComments = Array.from({length: 25}, createPost);
+export const posts = Array.from({length: 25}, createPost);
 
-drawMiniatures(similarComments);
+drawMiniatures(posts);
+
+showBigPicture();
 

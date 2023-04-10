@@ -4,13 +4,15 @@ import {getRandomInteger, createRandomIdFromRangeGenerator, getRandomArrayElemen
 
 const randomPostId = createRandomIdFromRangeGenerator(1, 25);
 
-function createRandomUrl () {
-  return `photos/${getRandomInteger(1, 25)}.jpg`;
-}
+const randomImageId = createRandomIdFromRangeGenerator(1, 25);
 
 const createRandomeLike = createRandomIdFromRangeGenerator(15, 200);
 
 const createRandomeIndexId = createRandomIdFromRangeGenerator(1, 1500);
+
+function createRandomUrl () {
+  return `photos/${randomImageId()}.jpg`;
+}
 
 function createRandomAvatar () {
   return `img/avatar-${getRandomInteger(1, 6)}.svg`;
@@ -20,8 +22,8 @@ function createRandomComment() {
   return {
     id: createRandomeIndexId(),
     avatar: createRandomAvatar(),
-    messege: getRandomArrayElement(MESSAGES),
-    names: getRandomArrayElement(NAMES),
+    message: getRandomArrayElement(MESSAGES),
+    name: getRandomArrayElement(NAMES),
   };
 }
 

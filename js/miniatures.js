@@ -3,7 +3,7 @@ const miniatureTemplate = document.querySelector('#picture').content;
 //Нашли нужный шаблон
 const container = document.querySelector('.pictures');
 
-const createMiniature = function ({comments, description, likes, url}) {
+const createMiniature = function ({comments, description, likes, url, id}) {
   const miniature = miniatureTemplate.cloneNode(true);
 
   //Адрес изображения url подставьте как атрибут src изображения
@@ -13,6 +13,7 @@ const createMiniature = function ({comments, description, likes, url}) {
   miniature.querySelector('.picture__likes').textcontent = likes;
   //Количество комментариев comments выведите в блок .picture__comments
   miniature.querySelector('.picture__comments').textcontent = comments.length;
+  miniature.querySelector('.picture').dataset.id = id;
 
   return miniature;
 };
